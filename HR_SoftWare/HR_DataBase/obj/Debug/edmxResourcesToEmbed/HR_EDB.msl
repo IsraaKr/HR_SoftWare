@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SMART_HR_DB_2023ModelStoreContainer" CdmEntityContainer="SMART_HR_DB_2023Entities">
+    <EntitySetMapping Name="T_Attend">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Attend">
+        <MappingFragment StoreEntitySet="T_Attend">
+          <ScalarProperty Name="Emp_Att_Id" ColumnName="Emp_Att_Id" />
+          <ScalarProperty Name="Emp_Att_Code" ColumnName="Emp_Att_Code" />
+          <ScalarProperty Name="Emp_Att_Date" ColumnName="Emp_Att_Date" />
+          <ScalarProperty Name="Emp_Att_Houer" ColumnName="Emp_Att_Houer" />
+          <ScalarProperty Name="Emp_Att_State" ColumnName="Emp_Att_State" />
+          <ScalarProperty Name="Emp_Att_Note" ColumnName="Emp_Att_Note" />
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+          <ScalarProperty Name="Emp_Att_D_Id" ColumnName="Emp_Att_D_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Attend_Day">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Attend_Day">
+        <MappingFragment StoreEntitySet="T_Attend_Day">
+          <ScalarProperty Name="Emp_Att_D_Id" ColumnName="Emp_Att_D_Id" />
+          <ScalarProperty Name="Emp_Att_D_Code" ColumnName="Emp_Att_D_Code" />
+          <ScalarProperty Name="Emp_Att_D_Date" ColumnName="Emp_Att_D_Date" />
+          <ScalarProperty Name="Emp_Att_D_Day" ColumnName="Emp_Att_D_Day" />
+          <ScalarProperty Name="Emp_Att_D_State" ColumnName="Emp_Att_D_State" />
+          <ScalarProperty Name="Emp_Att_D_Note" ColumnName="Emp_Att_D_Note" />
+          <ScalarProperty Name="Emp_Att_M_Id" ColumnName="Emp_Att_M_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Attend_Month">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Attend_Month">
+        <MappingFragment StoreEntitySet="T_Attend_Month">
+          <ScalarProperty Name="Emp_Att_M_Id" ColumnName="Emp_Att_M_Id" />
+          <ScalarProperty Name="Emp_Att_M_Code" ColumnName="Emp_Att_M_Code" />
+          <ScalarProperty Name="Emp_Att_M_Date" ColumnName="Emp_Att_M_Date" />
+          <ScalarProperty Name="Emp_Att_M_Month_Num" ColumnName="Emp_Att_M_Month_Num" />
+          <ScalarProperty Name="Emp_Att_M_Month_Name" ColumnName="Emp_Att_M_Month_Name" />
+          <ScalarProperty Name="Emp_Att_M_Day_Count" ColumnName="Emp_Att_M_Day_Count" />
+          <ScalarProperty Name="Emp_Att_M_State" ColumnName="Emp_Att_M_State" />
+          <ScalarProperty Name="Emp_Att_M_Note" ColumnName="Emp_Att_M_Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Companey">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Companey">
+        <MappingFragment StoreEntitySet="T_Companey">
+          <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+          <ScalarProperty Name="Company_Code" ColumnName="Company_Code" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Company_Tital" ColumnName="Company_Tital" />
+          <ScalarProperty Name="Company_Address" ColumnName="Company_Address" />
+          <ScalarProperty Name="Company_Mobile" ColumnName="Company_Mobile" />
+          <ScalarProperty Name="Company_Phone" ColumnName="Company_Phone" />
+          <ScalarProperty Name="Company_Fax" ColumnName="Company_Fax" />
+          <ScalarProperty Name="Company_Email" ColumnName="Company_Email" />
+          <ScalarProperty Name="Company_State" ColumnName="Company_State" />
+          <ScalarProperty Name="Company_Note" ColumnName="Company_Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Customer">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer">
+        <MappingFragment StoreEntitySet="T_Customer">
+          <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+          <ScalarProperty Name="Cust_Code" ColumnName="Cust_Code" />
+          <ScalarProperty Name="Cust_Name" ColumnName="Cust_Name" />
+          <ScalarProperty Name="Cust_Mobile" ColumnName="Cust_Mobile" />
+          <ScalarProperty Name="Cust_Phone" ColumnName="Cust_Phone" />
+          <ScalarProperty Name="Cust_Fax" ColumnName="Cust_Fax" />
+          <ScalarProperty Name="Cust_Email" ColumnName="Cust_Email" />
+          <ScalarProperty Name="Cust_Address" ColumnName="Cust_Address" />
+          <ScalarProperty Name="Cust_State" ColumnName="Cust_State" />
+          <ScalarProperty Name="Cust_Note" ColumnName="Cust_Note" />
+          <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Customer_Bill">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer_Bill">
+        <MappingFragment StoreEntitySet="T_Customer_Bill">
+          <ScalarProperty Name="bill_Id" ColumnName="bill_Id" />
+          <ScalarProperty Name="bill_Code" ColumnName="bill_Code" />
+          <ScalarProperty Name="bill_Text" ColumnName="bill_Text" />
+          <ScalarProperty Name="bill_Date" ColumnName="bill_Date" />
+          <ScalarProperty Name="bill_Time" ColumnName="bill_Time" />
+          <ScalarProperty Name="bill_Price" ColumnName="bill_Price" />
+          <ScalarProperty Name="bill_State" ColumnName="bill_State" />
+          <ScalarProperty Name="bill_Note" ColumnName="bill_Note" />
+          <ScalarProperty Name="Inv_Id" ColumnName="Inv_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Customer_Companey">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer_Companey">
+        <MappingFragment StoreEntitySet="T_Customer_Companey">
+          <ScalarProperty Name="Cust_Com_Id" ColumnName="Cust_Com_Id" />
+          <ScalarProperty Name="Cust_Com_Code" ColumnName="Cust_Com_Code" />
+          <ScalarProperty Name="Cust_Com_place" ColumnName="Cust_Com_place" />
+          <ScalarProperty Name="Cust_Com_Name" ColumnName="Cust_Com_Name" />
+          <ScalarProperty Name="Cust_Com_Time" ColumnName="Cust_Com_Time" />
+          <ScalarProperty Name="Cust_Com_Major" ColumnName="Cust_Com_Major" />
+          <ScalarProperty Name="Cust_Com_State" ColumnName="Cust_Com_State" />
+          <ScalarProperty Name="Cust_Com_Note" ColumnName="Cust_Com_Note" />
+          <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Customer_Contract">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer_Contract">
+        <MappingFragment StoreEntitySet="T_Customer_Contract">
+          <ScalarProperty Name="Con_Id" ColumnName="Con_Id" />
+          <ScalarProperty Name="Con_Code" ColumnName="Con_Code" />
+          <ScalarProperty Name="Con_Name" ColumnName="Con_Name" />
+          <ScalarProperty Name="Con_Date" ColumnName="Con_Date" />
+          <ScalarProperty Name="Con_S_Date" ColumnName="Con_S_Date" />
+          <ScalarProperty Name="Con_E_Date" ColumnName="Con_E_Date" />
+          <ScalarProperty Name="Con_" ColumnName="Con_" />
+          <ScalarProperty Name="Con_Emp_Num" ColumnName="Con_Emp_Num" />
+          <ScalarProperty Name="Con_emp_Value" ColumnName="Con_emp_Value" />
+          <ScalarProperty Name="Con_State" ColumnName="Con_State" />
+          <ScalarProperty Name="Con_Note" ColumnName="Con_Note" />
+          <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+          <ScalarProperty Name="Cust_Com_Id" ColumnName="Cust_Com_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Customer_Invoice">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer_Invoice">
+        <MappingFragment StoreEntitySet="T_Customer_Invoice">
+          <ScalarProperty Name="Inv_Id" ColumnName="Inv_Id" />
+          <ScalarProperty Name="Inv_Code" ColumnName="Inv_Code" />
+          <ScalarProperty Name="Inv_Date" ColumnName="Inv_Date" />
+          <ScalarProperty Name="Inv_Time" ColumnName="Inv_Time" />
+          <ScalarProperty Name="Inv_Price" ColumnName="Inv_Price" />
+          <ScalarProperty Name="Inv_Discount" ColumnName="Inv_Discount" />
+          <ScalarProperty Name="Inv_Total" ColumnName="Inv_Total" />
+          <ScalarProperty Name="Inv_State" ColumnName="Inv_State" />
+          <ScalarProperty Name="Inv_Note" ColumnName="Inv_Note" />
+          <ScalarProperty Name="Con_Id" ColumnName="Con_Id" />
+          <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Emploee">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Emploee">
+        <MappingFragment StoreEntitySet="T_Emploee">
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="Emp_F_Name" ColumnName="Emp_F_Name" />
+          <ScalarProperty Name="Emp_L_Name" ColumnName="Emp_L_Name" />
+          <ScalarProperty Name="Emp_Nation_num" ColumnName="Emp_Nation_num" />
+          <ScalarProperty Name="Emp_B_Date" ColumnName="Emp_B_Date" />
+          <ScalarProperty Name="Emp_Age" ColumnName="Emp_Age" />
+          <ScalarProperty Name="Emp_Gender" ColumnName="Emp_Gender" />
+          <ScalarProperty Name="Emp_Address" ColumnName="Emp_Address" />
+          <ScalarProperty Name="Emp_Phone" ColumnName="Emp_Phone" />
+          <ScalarProperty Name="Emp_Mobile" ColumnName="Emp_Mobile" />
+          <ScalarProperty Name="Emp_Maritial" ColumnName="Emp_Maritial" />
+          <ScalarProperty Name="Emp_State" ColumnName="Emp_State" />
+          <ScalarProperty Name="Emp_Note" ColumnName="Emp_Note" />
+          <ScalarProperty Name="Emp_St_Id" ColumnName="Emp_St_Id" />
+          <ScalarProperty Name="Emp_Mp_Id" ColumnName="Emp_Mp_Id" />
+          <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Employee_Certificate">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Certificate">
+        <MappingFragment StoreEntitySet="T_Employee_Certificate">
+          <ScalarProperty Name="Emp_C_Id" ColumnName="Emp_C_Id" />
+          <ScalarProperty Name="Emp_C_Code" ColumnName="Emp_C_Code" />
+          <ScalarProperty Name="Emp_C_Name" ColumnName="Emp_C_Name" />
+          <ScalarProperty Name="Emp_C_Adress" ColumnName="Emp_C_Adress" />
+          <ScalarProperty Name="Emp_C_Date" ColumnName="Emp_C_Date" />
+          <ScalarProperty Name="Emp_C_State" ColumnName="Emp_C_State" />
+          <ScalarProperty Name="Emp_C_Note" ColumnName="Emp_C_Note" />
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Employee_Experiance">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Experiance">
+        <MappingFragment StoreEntitySet="T_Employee_Experiance">
+          <ScalarProperty Name="Emp_Exp_Id" ColumnName="Emp_Exp_Id" />
+          <ScalarProperty Name="Emp_Exp_Code" ColumnName="Emp_Exp_Code" />
+          <ScalarProperty Name="Emp_Exp_Name" ColumnName="Emp_Exp_Name" />
+          <ScalarProperty Name="Emp_Exp_Date" ColumnName="Emp_Exp_Date" />
+          <ScalarProperty Name="Emp_Exp_Length" ColumnName="Emp_Exp_Length" />
+          <ScalarProperty Name="Emp_Exp_Adress" ColumnName="Emp_Exp_Adress" />
+          <ScalarProperty Name="Emp_Exp_Major" ColumnName="Emp_Exp_Major" />
+          <ScalarProperty Name="Emp_Exp_State" ColumnName="Emp_Exp_State" />
+          <ScalarProperty Name="Emp_Exp_note" ColumnName="Emp_Exp_note" />
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Employee_File">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_File">
+        <MappingFragment StoreEntitySet="T_Employee_File">
+          <ScalarProperty Name="Emp_F_Id" ColumnName="Emp_F_Id" />
+          <ScalarProperty Name="Emp_F_Code" ColumnName="Emp_F_Code" />
+          <ScalarProperty Name="Emp_F_Name" ColumnName="Emp_F_Name" />
+          <ScalarProperty Name="Emp_F_Type" ColumnName="Emp_F_Type" />
+          <ScalarProperty Name="Emp_F_Path" ColumnName="Emp_F_Path" />
+          <ScalarProperty Name="Emp_F_State" ColumnName="Emp_F_State" />
+          <ScalarProperty Name="Emp_F_Note" ColumnName="Emp_F_Note" />
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Employee_Map">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Map">
+        <MappingFragment StoreEntitySet="T_Employee_Map">
+          <ScalarProperty Name="Emp_Mp_Id" ColumnName="Emp_Mp_Id" />
+          <ScalarProperty Name="Emp_Mp_Code" ColumnName="Emp_Mp_Code" />
+          <ScalarProperty Name="Emp_Mp_Class" ColumnName="Emp_Mp_Class" />
+          <ScalarProperty Name="Emp_Mp_Level" ColumnName="Emp_Mp_Level" />
+          <ScalarProperty Name="Emp_Mp_Bonas" ColumnName="Emp_Mp_Bonas" />
+          <ScalarProperty Name="Emp_Mp_Blus" ColumnName="Emp_Mp_Blus" />
+          <ScalarProperty Name="Emp_Mp_Year" ColumnName="Emp_Mp_Year" />
+          <ScalarProperty Name="Emp_Mp_Salary" ColumnName="Emp_Mp_Salary" />
+          <ScalarProperty Name="Emp_Mp_Single_Bons" ColumnName="Emp_Mp_Single_Bons" />
+          <ScalarProperty Name="Emp_Mp_Marrid_Bons" ColumnName="Emp_Mp_Marrid_Bons" />
+          <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Employee_Retriment">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Retriment">
+        <MappingFragment StoreEntitySet="T_Employee_Retriment">
+          <ScalarProperty Name="Emp_Re_Id" ColumnName="Emp_Re_Id" />
+          <ScalarProperty Name="Emp_Re_Code" ColumnName="Emp_Re_Code" />
+          <ScalarProperty Name="Emp_Re_Name" ColumnName="Emp_Re_Name" />
+          <ScalarProperty Name="Emp_Re_Date" ColumnName="Emp_Re_Date" />
+          <ScalarProperty Name="Emp_Re_Resone" ColumnName="Emp_Re_Resone" />
+          <ScalarProperty Name="Emp_Re_Salary" ColumnName="Emp_Re_Salary" />
+          <ScalarProperty Name="Emp_Re_State" ColumnName="Emp_Re_State" />
+          <ScalarProperty Name="Emp_Re_Note" ColumnName="Emp_Re_Note" />
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Employee_Social">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Social">
+        <MappingFragment StoreEntitySet="T_Employee_Social">
+          <ScalarProperty Name="Emp_Ss_ID" ColumnName="Emp_Ss_ID" />
+          <ScalarProperty Name="Emp_Ss_Code" ColumnName="Emp_Ss_Code" />
+          <ScalarProperty Name="Emp_Ss_Number" ColumnName="Emp_Ss_Number" />
+          <ScalarProperty Name="Emp_Ss_Date" ColumnName="Emp_Ss_Date" />
+          <ScalarProperty Name="Emp_Ss_End_date" ColumnName="Emp_Ss_End_date" />
+          <ScalarProperty Name="Emp_Ss_Percentage" ColumnName="Emp_Ss_Percentage" />
+          <ScalarProperty Name="Emp_Ss_Emp" ColumnName="Emp_Ss_Emp" />
+          <ScalarProperty Name="Emp_Ss_Company" ColumnName="Emp_Ss_Company" />
+          <ScalarProperty Name="Emp_Ss_State" ColumnName="Emp_Ss_State" />
+          <ScalarProperty Name="Emp_Ss_Note" ColumnName="Emp_Ss_Note" />
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Employee_State">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_State">
+        <MappingFragment StoreEntitySet="T_Employee_State">
+          <ScalarProperty Name="Emp_St_Id" ColumnName="Emp_St_Id" />
+          <ScalarProperty Name="Emp_St_Code" ColumnName="Emp_St_Code" />
+          <ScalarProperty Name="Emp_St_Name" ColumnName="Emp_St_Name" />
+          <ScalarProperty Name="Emp_St_State" ColumnName="Emp_St_State" />
+          <ScalarProperty Name="Emp_St_Note" ColumnName="Emp_St_Note" />
+          <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Salarey_Month">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Salarey_Month">
+        <MappingFragment StoreEntitySet="T_Salarey_Month">
+          <ScalarProperty Name="Emp_Mnth_Sal_Id" ColumnName="Emp_Mnth_Sal_Id" />
+          <ScalarProperty Name="Emp_Mnth_Sal_Code" ColumnName="Emp_Mnth_Sal_Code" />
+          <ScalarProperty Name="Emp_Mnth_Sal_Name" ColumnName="Emp_Mnth_Sal_Name" />
+          <ScalarProperty Name="Emp_Mnth_Sal_Date" ColumnName="Emp_Mnth_Sal_Date" />
+          <ScalarProperty Name="Emp_Mnth_Sal_Salary" ColumnName="Emp_Mnth_Sal_Salary" />
+          <ScalarProperty Name="Emp_Mnth_Sal_Bonas" ColumnName="Emp_Mnth_Sal_Bonas" />
+          <ScalarProperty Name="Emp_Mnth_Sal_Minose" ColumnName="Emp_Mnth_Sal_Minose" />
+          <ScalarProperty Name="Emp_Mnth_Sal_SS_Minous" ColumnName="Emp_Mnth_Sal_SS_Minous" />
+          <ScalarProperty Name="Emp_Mnth_Sal_Total" ColumnName="Emp_Mnth_Sal_Total" />
+          <ScalarProperty Name="Emp_Mnth_Sal_State" ColumnName="Emp_Mnth_Sal_State" />
+          <ScalarProperty Name="Emp_Mnth_Sal_Note" ColumnName="Emp_Mnth_Sal_Note" />
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+          <ScalarProperty Name="Emp_Sal_Id" ColumnName="Emp_Sal_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Salary_Master">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Salary_Master">
+        <MappingFragment StoreEntitySet="T_Salary_Master">
+          <ScalarProperty Name="Emp_Sal_Id" ColumnName="Emp_Sal_Id" />
+          <ScalarProperty Name="Emp_Sal_Code" ColumnName="Emp_Sal_Code" />
+          <ScalarProperty Name="Emp_Sal_Name" ColumnName="Emp_Sal_Name" />
+          <ScalarProperty Name="Emp_Sal_Salary" ColumnName="Emp_Sal_Salary" />
+          <ScalarProperty Name="Emp_Sal_State" ColumnName="Emp_Sal_State" />
+          <ScalarProperty Name="Emp_Sal_Note" ColumnName="Emp_Sal_Note" />
+          <ScalarProperty Name="Emp_Mp_Id" ColumnName="Emp_Mp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_User_Type">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_User_Type">
+        <MappingFragment StoreEntitySet="T_User_Type">
+          <ScalarProperty Name="User_T_Id" ColumnName="User_T_Id" />
+          <ScalarProperty Name="User_T_Code" ColumnName="User_T_Code" />
+          <ScalarProperty Name="User_T_Nane" ColumnName="User_T_Nane" />
+          <ScalarProperty Name="User_T_State" ColumnName="User_T_State" />
+          <ScalarProperty Name="User_T_Note" ColumnName="User_T_Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Users">
+      <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Users">
+        <MappingFragment StoreEntitySet="T_Users">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="User_Code" ColumnName="User_Code" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="User_State" ColumnName="User_State" />
+          <ScalarProperty Name="User_Note" ColumnName="User_Note" />
+          <ScalarProperty Name="User_T_Id" ColumnName="User_T_Id" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

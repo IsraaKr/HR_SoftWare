@@ -1,0 +1,12 @@
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\bin\Debug\HR_DataBase.dll.config
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\bin\Debug\HR_DataBase.dll
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\bin\Debug\HR_DataBase.pdb
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\bin\Debug\EntityFramework.dll
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\bin\Debug\EntityFramework.xml
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\obj\Debug\HR_DataBase.csproj.CoreCompileInputs.cache
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\obj\Debug\HR_DataBase.csproj.CopyComplete
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\obj\Debug\HR_DataBase.dll
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\obj\Debug\HR_DataBase.pdb
+C:\Users\Israa\source\repos\IsraaKr\HR_SoftWare\HR_SoftWare\HR_DataBase\obj\Debug\HR_DataBase.csprojAssemblyReference.cache

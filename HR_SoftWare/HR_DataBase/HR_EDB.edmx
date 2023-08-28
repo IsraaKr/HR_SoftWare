@@ -1,0 +1,1933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SMART_HR_DB_2023Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_Attend">
+          <Key>
+            <PropertyRef Name="Emp_Att_Id" />
+          </Key>
+          <Property Name="Emp_Att_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Att_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Att_Date" Type="date" />
+          <Property Name="Emp_Att_Houer" Type="int" />
+          <Property Name="Emp_Att_State" Type="bit" />
+          <Property Name="Emp_Att_Note" Type="nvarchar(max)" />
+          <Property Name="Emp_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Emp_Att_D_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Attend_Day">
+          <Key>
+            <PropertyRef Name="Emp_Att_D_Id" />
+          </Key>
+          <Property Name="Emp_Att_D_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Att_D_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Att_D_Date" Type="date" />
+          <Property Name="Emp_Att_D_Day" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Att_D_State" Type="bit" />
+          <Property Name="Emp_Att_D_Note" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Att_M_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Attend_Month">
+          <Key>
+            <PropertyRef Name="Emp_Att_M_Id" />
+          </Key>
+          <Property Name="Emp_Att_M_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Att_M_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Att_M_Date" Type="date" />
+          <Property Name="Emp_Att_M_Month_Num" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="Emp_Att_M_Month_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Att_M_Day_Count" Type="int" />
+          <Property Name="Emp_Att_M_State" Type="bit" />
+          <Property Name="Emp_Att_M_Note" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_Companey">
+          <Key>
+            <PropertyRef Name="Company_Id" />
+          </Key>
+          <Property Name="Company_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Company_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company_Name" Type="nvarchar(max)" />
+          <Property Name="Company_Tital" Type="nvarchar(max)" />
+          <Property Name="Company_Address" Type="nvarchar(max)" />
+          <Property Name="Company_Mobile" Type="nvarchar(max)" />
+          <Property Name="Company_Phone" Type="nvarchar(max)" />
+          <Property Name="Company_Fax" Type="nvarchar(max)" />
+          <Property Name="Company_Email" Type="nvarchar(max)" />
+          <Property Name="Company_State" Type="bit" />
+          <Property Name="Company_Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="T_Customer">
+          <Key>
+            <PropertyRef Name="Cust_Id" />
+          </Key>
+          <Property Name="Cust_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cust_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cust_Mobile" Type="nvarchar(max)" />
+          <Property Name="Cust_Phone" Type="nvarchar(max)" />
+          <Property Name="Cust_Fax" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cust_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cust_Address" Type="nvarchar(max)" />
+          <Property Name="Cust_State" Type="bit" />
+          <Property Name="Cust_Note" Type="nvarchar(max)" />
+          <Property Name="Company_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Customer_Bill">
+          <Key>
+            <PropertyRef Name="bill_Id" />
+          </Key>
+          <Property Name="bill_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="bill_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="bill_Text" Type="nvarchar(max)" />
+          <Property Name="bill_Date" Type="date" />
+          <Property Name="bill_Time" Type="time" Precision="7" />
+          <Property Name="bill_Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="bill_State" Type="bit" />
+          <Property Name="bill_Note" Type="nvarchar(max)" />
+          <Property Name="Inv_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Customer_Companey">
+          <Key>
+            <PropertyRef Name="Cust_Com_Id" />
+          </Key>
+          <Property Name="Cust_Com_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Cust_Com_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cust_Com_place" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cust_Com_Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Cust_Com_Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cust_Com_Major" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cust_Com_State" Type="bit" />
+          <Property Name="Cust_Com_Note" Type="nvarchar(max)" />
+          <Property Name="Cust_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Customer_Contract">
+          <Key>
+            <PropertyRef Name="Con_Id" />
+          </Key>
+          <Property Name="Con_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Con_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Con_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Con_Date" Type="date" />
+          <Property Name="Con_S_Date" Type="date" />
+          <Property Name="Con_E_Date" Type="date" />
+          <Property Name="Con_" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Con_Emp_Num" Type="int" />
+          <Property Name="Con_emp_Value" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Con_State" Type="bit" />
+          <Property Name="Con_Note" Type="nvarchar(max)" />
+          <Property Name="Cust_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Cust_Com_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Customer_Invoice">
+          <Key>
+            <PropertyRef Name="Inv_Id" />
+          </Key>
+          <Property Name="Inv_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Inv_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Inv_Date" Type="date" />
+          <Property Name="Inv_Time" Type="time" Precision="7" />
+          <Property Name="Inv_Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Inv_Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Inv_Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Inv_State" Type="bit" />
+          <Property Name="Inv_Note" Type="nvarchar(max)" />
+          <Property Name="Con_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Cust_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Emploee">
+          <Key>
+            <PropertyRef Name="Emp_Id" />
+          </Key>
+          <Property Name="Emp_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_F_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Emp_L_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Emp_Nation_num" Type="nvarchar" MaxLength="100" />
+          <Property Name="Emp_B_Date" Type="date" />
+          <Property Name="Emp_Age" Type="int" />
+          <Property Name="Emp_Gender" Type="int" />
+          <Property Name="Emp_Address" Type="nvarchar(max)" />
+          <Property Name="Emp_Phone" Type="nvarchar(max)" />
+          <Property Name="Emp_Mobile" Type="nvarchar(max)" />
+          <Property Name="Emp_Maritial" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_State" Type="bit" />
+          <Property Name="Emp_Note" Type="nvarchar(max)" />
+          <Property Name="Emp_St_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Emp_Mp_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Company_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Employee_Certificate">
+          <Key>
+            <PropertyRef Name="Emp_C_Id" />
+          </Key>
+          <Property Name="Emp_C_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_C_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_C_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Emp_C_Adress" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_C_Date" Type="date" />
+          <Property Name="Emp_C_State" Type="bit" />
+          <Property Name="Emp_C_Note" Type="nvarchar(max)" />
+          <Property Name="Emp_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Employee_Experiance">
+          <Key>
+            <PropertyRef Name="Emp_Exp_Id" />
+          </Key>
+          <Property Name="Emp_Exp_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Exp_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Exp_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Exp_Date" Type="date" />
+          <Property Name="Emp_Exp_Length" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Exp_Adress" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Exp_Major" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Exp_State" Type="bit" />
+          <Property Name="Emp_Exp_note" Type="nvarchar(max)" />
+          <Property Name="Emp_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Employee_File">
+          <Key>
+            <PropertyRef Name="Emp_F_Id" />
+          </Key>
+          <Property Name="Emp_F_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_F_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_F_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_F_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_F_Path" Type="nvarchar(max)" />
+          <Property Name="Emp_F_State" Type="bit" />
+          <Property Name="Emp_F_Note" Type="nvarchar(max)" />
+          <Property Name="Emp_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Employee_Map">
+          <Key>
+            <PropertyRef Name="Emp_Mp_Id" />
+          </Key>
+          <Property Name="Emp_Mp_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Mp_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Mp_Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Mp_Level" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Mp_Bonas" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Blus" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Year" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Single_Bons" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Marrid_Bons" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Company_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Employee_Retriment">
+          <Key>
+            <PropertyRef Name="Emp_Re_Id" />
+          </Key>
+          <Property Name="Emp_Re_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Re_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Re_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Re_Date" Type="date" />
+          <Property Name="Emp_Re_Resone" Type="nvarchar" MaxLength="200" />
+          <Property Name="Emp_Re_Salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Re_State" Type="bit" />
+          <Property Name="Emp_Re_Note" Type="nvarchar(max)" />
+          <Property Name="Emp_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Employee_Social">
+          <Key>
+            <PropertyRef Name="Emp_Ss_ID" />
+          </Key>
+          <Property Name="Emp_Ss_ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Ss_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Ss_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Ss_Date" Type="date" />
+          <Property Name="Emp_Ss_End_date" Type="date" />
+          <Property Name="Emp_Ss_Percentage" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Ss_Emp" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Ss_Company" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Ss_State" Type="bit" />
+          <Property Name="Emp_Ss_Note" Type="nvarchar(max)" />
+          <Property Name="Emp_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Employee_State">
+          <Key>
+            <PropertyRef Name="Emp_St_Id" />
+          </Key>
+          <Property Name="Emp_St_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_St_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_St_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_St_State" Type="bit" />
+          <Property Name="Emp_St_Note" Type="nvarchar(max)" />
+          <Property Name="Company_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Salarey_Month">
+          <Key>
+            <PropertyRef Name="Emp_Mnth_Sal_Id" />
+          </Key>
+          <Property Name="Emp_Mnth_Sal_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Mnth_Sal_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Mnth_Sal_Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Emp_Mnth_Sal_Date" Type="date" />
+          <Property Name="Emp_Mnth_Sal_Salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_Bonas" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_Minose" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_SS_Minous" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_State" Type="bit" />
+          <Property Name="Emp_Mnth_Sal_Note" Type="nvarchar(max)" />
+          <Property Name="Emp_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Emp_Sal_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_Salary_Master">
+          <Key>
+            <PropertyRef Name="Emp_Sal_Id" />
+          </Key>
+          <Property Name="Emp_Sal_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Sal_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Sal_Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Emp_Sal_Salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Sal_State" Type="bit" />
+          <Property Name="Emp_Sal_Note" Type="nvarchar(max)" />
+          <Property Name="Emp_Mp_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_User_Type">
+          <Key>
+            <PropertyRef Name="User_T_Id" />
+          </Key>
+          <Property Name="User_T_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="User_T_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_T_Nane" Type="nvarchar" MaxLength="200" />
+          <Property Name="User_T_State" Type="bit" />
+          <Property Name="User_T_Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="T_Users">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="User_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="User_Password" Type="nvarchar" MaxLength="200" />
+          <Property Name="User_State" Type="bit" />
+          <Property Name="User_Note" Type="nvarchar(max)" />
+          <Property Name="User_T_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Comp_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <Association Name="FK_T_Attend_T_Attend_Day">
+          <End Role="T_Attend_Day" Type="Self.T_Attend_Day" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Attend" Type="Self.T_Attend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Attend_Day">
+              <PropertyRef Name="Emp_Att_D_Id" />
+            </Principal>
+            <Dependent Role="T_Attend">
+              <PropertyRef Name="Emp_Att_D_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Attend_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Attend" Type="Self.T_Attend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Attend">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Contract_T_Customer">
+          <End Role="T_Customer" Type="Self.T_Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Customer_Contract" Type="Self.T_Customer_Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer">
+              <PropertyRef Name="Cust_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Contract">
+              <PropertyRef Name="Cust_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Contract_T_Customer_Companey">
+          <End Role="T_Customer_Companey" Type="Self.T_Customer_Companey" Multiplicity="0..1" />
+          <End Role="T_Customer_Contract" Type="Self.T_Customer_Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer_Companey">
+              <PropertyRef Name="Cust_Com_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Contract">
+              <PropertyRef Name="Cust_Com_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Customer_Bill_T_Customer_Invoice">
+          <End Role="T_Customer_Invoice" Type="Self.T_Customer_Invoice" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Customer_Bill" Type="Self.T_Customer_Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer_Invoice">
+              <PropertyRef Name="Inv_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Bill">
+              <PropertyRef Name="Inv_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Customer_Companey_T_Customer">
+          <End Role="T_Customer" Type="Self.T_Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Customer_Companey" Type="Self.T_Customer_Companey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer">
+              <PropertyRef Name="Cust_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Companey">
+              <PropertyRef Name="Cust_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Customer_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Customer" Type="Self.T_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Customer">
+              <PropertyRef Name="Company_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploee_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Emploee">
+              <PropertyRef Name="Company_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploee_T_Employee_Map">
+          <End Role="T_Employee_Map" Type="Self.T_Employee_Map" Multiplicity="0..1" />
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Employee_Map">
+              <PropertyRef Name="Emp_Mp_Id" />
+            </Principal>
+            <Dependent Role="T_Emploee">
+              <PropertyRef Name="Emp_Mp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploee_T_Employee_State">
+          <End Role="T_Employee_State" Type="Self.T_Employee_State" Multiplicity="0..1" />
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Employee_State">
+              <PropertyRef Name="Emp_St_Id" />
+            </Principal>
+            <Dependent Role="T_Emploee">
+              <PropertyRef Name="Emp_St_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploeey_Attend_Day_T_Emploeey_Attend_Month">
+          <End Role="T_Attend_Month" Type="Self.T_Attend_Month" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Attend_Day" Type="Self.T_Attend_Day" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Attend_Month">
+              <PropertyRef Name="Emp_Att_M_Id" />
+            </Principal>
+            <Dependent Role="T_Attend_Day">
+              <PropertyRef Name="Emp_Att_M_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploeey_Month_Salarey_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Salarey_Month" Type="Self.T_Salarey_Month" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Salarey_Month">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploeey_Month_Salarey_T_Emploeey_Salary_Master">
+          <End Role="T_Salary_Master" Type="Self.T_Salary_Master" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Salarey_Month" Type="Self.T_Salarey_Month" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Salary_Master">
+              <PropertyRef Name="Emp_Sal_Id" />
+            </Principal>
+            <Dependent Role="T_Salarey_Month">
+              <PropertyRef Name="Emp_Sal_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploeey_Salary_Master_T_Employee_Map">
+          <End Role="T_Employee_Map" Type="Self.T_Employee_Map" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Salary_Master" Type="Self.T_Salary_Master" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Employee_Map">
+              <PropertyRef Name="Emp_Mp_Id" />
+            </Principal>
+            <Dependent Role="T_Salary_Master">
+              <PropertyRef Name="Emp_Mp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Certificate_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_Certificate" Type="Self.T_Employee_Certificate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Certificate">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Experiance_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_Experiance" Type="Self.T_Employee_Experiance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Experiance">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_File_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_File" Type="Self.T_Employee_File" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_File">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Map_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Employee_Map" Type="Self.T_Employee_Map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Map">
+              <PropertyRef Name="Company_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Retriment_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_Retriment" Type="Self.T_Employee_Retriment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Retriment">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Social_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_Social" Type="Self.T_Employee_Social" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Social">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_State_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Employee_State" Type="Self.T_Employee_State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_State">
+              <PropertyRef Name="Company_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Invoice_T_Customer">
+          <End Role="T_Customer" Type="Self.T_Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Customer_Invoice" Type="Self.T_Customer_Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer">
+              <PropertyRef Name="Cust_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Invoice">
+              <PropertyRef Name="Cust_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Invoice_T_Customer_Contract">
+          <End Role="T_Customer_Contract" Type="Self.T_Customer_Contract" Multiplicity="0..1" />
+          <End Role="T_Customer_Invoice" Type="Self.T_Customer_Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer_Contract">
+              <PropertyRef Name="Con_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Invoice">
+              <PropertyRef Name="Con_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Users_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Users" Type="Self.T_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Users">
+              <PropertyRef Name="Comp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Users_T_User_Type">
+          <End Role="T_User_Type" Type="Self.T_User_Type" Multiplicity="0..1" />
+          <End Role="T_Users" Type="Self.T_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_User_Type">
+              <PropertyRef Name="User_T_Id" />
+            </Principal>
+            <Dependent Role="T_Users">
+              <PropertyRef Name="User_T_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SMART_HR_DB_2023ModelStoreContainer">
+          <EntitySet Name="T_Attend" EntityType="Self.T_Attend" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Attend_Day" EntityType="Self.T_Attend_Day" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Attend_Month" EntityType="Self.T_Attend_Month" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Companey" EntityType="Self.T_Companey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Customer" EntityType="Self.T_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Customer_Bill" EntityType="Self.T_Customer_Bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Customer_Companey" EntityType="Self.T_Customer_Companey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Customer_Contract" EntityType="Self.T_Customer_Contract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Customer_Invoice" EntityType="Self.T_Customer_Invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Emploee" EntityType="Self.T_Emploee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Employee_Certificate" EntityType="Self.T_Employee_Certificate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Employee_Experiance" EntityType="Self.T_Employee_Experiance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Employee_File" EntityType="Self.T_Employee_File" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Employee_Map" EntityType="Self.T_Employee_Map" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Employee_Retriment" EntityType="Self.T_Employee_Retriment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Employee_Social" EntityType="Self.T_Employee_Social" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Employee_State" EntityType="Self.T_Employee_State" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Salarey_Month" EntityType="Self.T_Salarey_Month" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Salary_Master" EntityType="Self.T_Salary_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_User_Type" EntityType="Self.T_User_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Users" EntityType="Self.T_Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_T_Attend_T_Attend_Day" Association="Self.FK_T_Attend_T_Attend_Day">
+            <End Role="T_Attend_Day" EntitySet="T_Attend_Day" />
+            <End Role="T_Attend" EntitySet="T_Attend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Attend_T_Emploee" Association="Self.FK_T_Attend_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Attend" EntitySet="T_Attend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Contract_T_Customer" Association="Self.FK_T_Contract_T_Customer">
+            <End Role="T_Customer" EntitySet="T_Customer" />
+            <End Role="T_Customer_Contract" EntitySet="T_Customer_Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Contract_T_Customer_Companey" Association="Self.FK_T_Contract_T_Customer_Companey">
+            <End Role="T_Customer_Companey" EntitySet="T_Customer_Companey" />
+            <End Role="T_Customer_Contract" EntitySet="T_Customer_Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Customer_Bill_T_Customer_Invoice" Association="Self.FK_T_Customer_Bill_T_Customer_Invoice">
+            <End Role="T_Customer_Invoice" EntitySet="T_Customer_Invoice" />
+            <End Role="T_Customer_Bill" EntitySet="T_Customer_Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Customer_Companey_T_Customer" Association="Self.FK_T_Customer_Companey_T_Customer">
+            <End Role="T_Customer" EntitySet="T_Customer" />
+            <End Role="T_Customer_Companey" EntitySet="T_Customer_Companey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Customer_T_Companey" Association="Self.FK_T_Customer_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Customer" EntitySet="T_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploee_T_Companey" Association="Self.FK_T_Emploee_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploee_T_Employee_Map" Association="Self.FK_T_Emploee_T_Employee_Map">
+            <End Role="T_Employee_Map" EntitySet="T_Employee_Map" />
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploee_T_Employee_State" Association="Self.FK_T_Emploee_T_Employee_State">
+            <End Role="T_Employee_State" EntitySet="T_Employee_State" />
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploeey_Attend_Day_T_Emploeey_Attend_Month" Association="Self.FK_T_Emploeey_Attend_Day_T_Emploeey_Attend_Month">
+            <End Role="T_Attend_Month" EntitySet="T_Attend_Month" />
+            <End Role="T_Attend_Day" EntitySet="T_Attend_Day" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploeey_Month_Salarey_T_Emploee" Association="Self.FK_T_Emploeey_Month_Salarey_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Salarey_Month" EntitySet="T_Salarey_Month" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploeey_Month_Salarey_T_Emploeey_Salary_Master" Association="Self.FK_T_Emploeey_Month_Salarey_T_Emploeey_Salary_Master">
+            <End Role="T_Salary_Master" EntitySet="T_Salary_Master" />
+            <End Role="T_Salarey_Month" EntitySet="T_Salarey_Month" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploeey_Salary_Master_T_Employee_Map" Association="Self.FK_T_Emploeey_Salary_Master_T_Employee_Map">
+            <End Role="T_Employee_Map" EntitySet="T_Employee_Map" />
+            <End Role="T_Salary_Master" EntitySet="T_Salary_Master" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Certificate_T_Emploee" Association="Self.FK_T_Employee_Certificate_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_Certificate" EntitySet="T_Employee_Certificate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Experiance_T_Emploee" Association="Self.FK_T_Employee_Experiance_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_Experiance" EntitySet="T_Employee_Experiance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_File_T_Emploee" Association="Self.FK_T_Employee_File_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_File" EntitySet="T_Employee_File" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Map_T_Companey" Association="Self.FK_T_Employee_Map_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Employee_Map" EntitySet="T_Employee_Map" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Retriment_T_Emploee" Association="Self.FK_T_Employee_Retriment_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_Retriment" EntitySet="T_Employee_Retriment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Social_T_Emploee" Association="Self.FK_T_Employee_Social_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_Social" EntitySet="T_Employee_Social" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_State_T_Companey" Association="Self.FK_T_Employee_State_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Employee_State" EntitySet="T_Employee_State" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Invoice_T_Customer" Association="Self.FK_T_Invoice_T_Customer">
+            <End Role="T_Customer" EntitySet="T_Customer" />
+            <End Role="T_Customer_Invoice" EntitySet="T_Customer_Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Invoice_T_Customer_Contract" Association="Self.FK_T_Invoice_T_Customer_Contract">
+            <End Role="T_Customer_Contract" EntitySet="T_Customer_Contract" />
+            <End Role="T_Customer_Invoice" EntitySet="T_Customer_Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Users_T_Companey" Association="Self.FK_T_Users_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Users" EntitySet="T_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Users_T_User_Type" Association="Self.FK_T_Users_T_User_Type">
+            <End Role="T_User_Type" EntitySet="T_User_Type" />
+            <End Role="T_Users" EntitySet="T_Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SMART_HR_DB_2023Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_Attend">
+          <Key>
+            <PropertyRef Name="Emp_Att_Id" />
+          </Key>
+          <Property Name="Emp_Att_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Att_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Att_Date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_Att_Houer" Type="Int32" />
+          <Property Name="Emp_Att_State" Type="Boolean" />
+          <Property Name="Emp_Att_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Emp_Att_D_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Attend_Day" Relationship="Self.FK_T_Attend_T_Attend_Day" FromRole="T_Attend" ToRole="T_Attend_Day" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Attend_T_Emploee" FromRole="T_Attend" ToRole="T_Emploee" />
+        </EntityType>
+        <EntityType Name="T_Attend_Day">
+          <Key>
+            <PropertyRef Name="Emp_Att_D_Id" />
+          </Key>
+          <Property Name="Emp_Att_D_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Att_D_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Att_D_Date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_Att_D_Day" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Att_D_State" Type="Boolean" />
+          <Property Name="Emp_Att_D_Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Att_M_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Attend" Relationship="Self.FK_T_Attend_T_Attend_Day" FromRole="T_Attend_Day" ToRole="T_Attend" />
+          <NavigationProperty Name="T_Attend_Month" Relationship="Self.FK_T_Emploeey_Attend_Day_T_Emploeey_Attend_Month" FromRole="T_Attend_Day" ToRole="T_Attend_Month" />
+        </EntityType>
+        <EntityType Name="T_Attend_Month">
+          <Key>
+            <PropertyRef Name="Emp_Att_M_Id" />
+          </Key>
+          <Property Name="Emp_Att_M_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Att_M_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Att_M_Date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_Att_M_Month_Num" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="Emp_Att_M_Month_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Att_M_Day_Count" Type="Int32" />
+          <Property Name="Emp_Att_M_State" Type="Boolean" />
+          <Property Name="Emp_Att_M_Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_Attend_Day" Relationship="Self.FK_T_Emploeey_Attend_Day_T_Emploeey_Attend_Month" FromRole="T_Attend_Month" ToRole="T_Attend_Day" />
+        </EntityType>
+        <EntityType Name="T_Companey">
+          <Key>
+            <PropertyRef Name="Company_Id" />
+          </Key>
+          <Property Name="Company_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Company_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Tital" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company_State" Type="Boolean" />
+          <Property Name="Company_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_Customer" Relationship="Self.FK_T_Customer_T_Companey" FromRole="T_Companey" ToRole="T_Customer" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Emploee_T_Companey" FromRole="T_Companey" ToRole="T_Emploee" />
+          <NavigationProperty Name="T_Employee_Map" Relationship="Self.FK_T_Employee_Map_T_Companey" FromRole="T_Companey" ToRole="T_Employee_Map" />
+          <NavigationProperty Name="T_Employee_State" Relationship="Self.FK_T_Employee_State_T_Companey" FromRole="T_Companey" ToRole="T_Employee_State" />
+          <NavigationProperty Name="T_Users" Relationship="Self.FK_T_Users_T_Companey" FromRole="T_Companey" ToRole="T_Users" />
+        </EntityType>
+        <EntityType Name="T_Customer">
+          <Key>
+            <PropertyRef Name="Cust_Id" />
+          </Key>
+          <Property Name="Cust_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_State" Type="Boolean" />
+          <Property Name="Cust_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Companey" Relationship="Self.FK_T_Customer_T_Companey" FromRole="T_Customer" ToRole="T_Companey" />
+          <NavigationProperty Name="T_Customer_Contract" Relationship="Self.FK_T_Contract_T_Customer" FromRole="T_Customer" ToRole="T_Customer_Contract" />
+          <NavigationProperty Name="T_Customer_Companey" Relationship="Self.FK_T_Customer_Companey_T_Customer" FromRole="T_Customer" ToRole="T_Customer_Companey" />
+          <NavigationProperty Name="T_Customer_Invoice" Relationship="Self.FK_T_Invoice_T_Customer" FromRole="T_Customer" ToRole="T_Customer_Invoice" />
+        </EntityType>
+        <EntityType Name="T_Customer_Bill">
+          <Key>
+            <PropertyRef Name="bill_Id" />
+          </Key>
+          <Property Name="bill_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="bill_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bill_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bill_Date" Type="DateTime" Precision="0" />
+          <Property Name="bill_Time" Type="Time" Precision="7" />
+          <Property Name="bill_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="bill_State" Type="Boolean" />
+          <Property Name="bill_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Inv_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Customer_Invoice" Relationship="Self.FK_T_Customer_Bill_T_Customer_Invoice" FromRole="T_Customer_Bill" ToRole="T_Customer_Invoice" />
+        </EntityType>
+        <EntityType Name="T_Customer_Companey">
+          <Key>
+            <PropertyRef Name="Cust_Com_Id" />
+          </Key>
+          <Property Name="Cust_Com_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Cust_Com_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Com_place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Com_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Com_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Com_Major" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Com_State" Type="Boolean" />
+          <Property Name="Cust_Com_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Customer" Relationship="Self.FK_T_Customer_Companey_T_Customer" FromRole="T_Customer_Companey" ToRole="T_Customer" />
+          <NavigationProperty Name="T_Customer_Contract" Relationship="Self.FK_T_Contract_T_Customer_Companey" FromRole="T_Customer_Companey" ToRole="T_Customer_Contract" />
+        </EntityType>
+        <EntityType Name="T_Customer_Contract">
+          <Key>
+            <PropertyRef Name="Con_Id" />
+          </Key>
+          <Property Name="Con_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Con_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Con_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Con_Date" Type="DateTime" Precision="0" />
+          <Property Name="Con_S_Date" Type="DateTime" Precision="0" />
+          <Property Name="Con_E_Date" Type="DateTime" Precision="0" />
+          <Property Name="Con_" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Con_Emp_Num" Type="Int32" />
+          <Property Name="Con_emp_Value" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Con_State" Type="Boolean" />
+          <Property Name="Con_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Cust_Com_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Customer" Relationship="Self.FK_T_Contract_T_Customer" FromRole="T_Customer_Contract" ToRole="T_Customer" />
+          <NavigationProperty Name="T_Customer_Companey" Relationship="Self.FK_T_Contract_T_Customer_Companey" FromRole="T_Customer_Contract" ToRole="T_Customer_Companey" />
+          <NavigationProperty Name="T_Customer_Invoice" Relationship="Self.FK_T_Invoice_T_Customer_Contract" FromRole="T_Customer_Contract" ToRole="T_Customer_Invoice" />
+        </EntityType>
+        <EntityType Name="T_Customer_Invoice">
+          <Key>
+            <PropertyRef Name="Inv_Id" />
+          </Key>
+          <Property Name="Inv_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Inv_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Inv_Date" Type="DateTime" Precision="0" />
+          <Property Name="Inv_Time" Type="Time" Precision="7" />
+          <Property Name="Inv_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Inv_Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Inv_Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Inv_State" Type="Boolean" />
+          <Property Name="Inv_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Con_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Cust_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Customer" Relationship="Self.FK_T_Invoice_T_Customer" FromRole="T_Customer_Invoice" ToRole="T_Customer" />
+          <NavigationProperty Name="T_Customer_Bill" Relationship="Self.FK_T_Customer_Bill_T_Customer_Invoice" FromRole="T_Customer_Invoice" ToRole="T_Customer_Bill" />
+          <NavigationProperty Name="T_Customer_Contract" Relationship="Self.FK_T_Invoice_T_Customer_Contract" FromRole="T_Customer_Invoice" ToRole="T_Customer_Contract" />
+        </EntityType>
+        <EntityType Name="T_Emploee">
+          <Key>
+            <PropertyRef Name="Emp_Id" />
+          </Key>
+          <Property Name="Emp_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_F_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_L_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Nation_num" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_B_Date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_Age" Type="Int32" />
+          <Property Name="Emp_Gender" Type="Int32" />
+          <Property Name="Emp_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Maritial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_State" Type="Boolean" />
+          <Property Name="Emp_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_St_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Emp_Mp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Company_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Attend" Relationship="Self.FK_T_Attend_T_Emploee" FromRole="T_Emploee" ToRole="T_Attend" />
+          <NavigationProperty Name="T_Companey" Relationship="Self.FK_T_Emploee_T_Companey" FromRole="T_Emploee" ToRole="T_Companey" />
+          <NavigationProperty Name="T_Employee_Map" Relationship="Self.FK_T_Emploee_T_Employee_Map" FromRole="T_Emploee" ToRole="T_Employee_Map" />
+          <NavigationProperty Name="T_Employee_State" Relationship="Self.FK_T_Emploee_T_Employee_State" FromRole="T_Emploee" ToRole="T_Employee_State" />
+          <NavigationProperty Name="T_Salarey_Month" Relationship="Self.FK_T_Emploeey_Month_Salarey_T_Emploee" FromRole="T_Emploee" ToRole="T_Salarey_Month" />
+          <NavigationProperty Name="T_Employee_Certificate" Relationship="Self.FK_T_Employee_Certificate_T_Emploee" FromRole="T_Emploee" ToRole="T_Employee_Certificate" />
+          <NavigationProperty Name="T_Employee_Experiance" Relationship="Self.FK_T_Employee_Experiance_T_Emploee" FromRole="T_Emploee" ToRole="T_Employee_Experiance" />
+          <NavigationProperty Name="T_Employee_File" Relationship="Self.FK_T_Employee_File_T_Emploee" FromRole="T_Emploee" ToRole="T_Employee_File" />
+          <NavigationProperty Name="T_Employee_Retriment" Relationship="Self.FK_T_Employee_Retriment_T_Emploee" FromRole="T_Emploee" ToRole="T_Employee_Retriment" />
+          <NavigationProperty Name="T_Employee_Social" Relationship="Self.FK_T_Employee_Social_T_Emploee" FromRole="T_Emploee" ToRole="T_Employee_Social" />
+        </EntityType>
+        <EntityType Name="T_Employee_Certificate">
+          <Key>
+            <PropertyRef Name="Emp_C_Id" />
+          </Key>
+          <Property Name="Emp_C_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_C_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_C_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_C_Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_C_Date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_C_State" Type="Boolean" />
+          <Property Name="Emp_C_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Employee_Certificate_T_Emploee" FromRole="T_Employee_Certificate" ToRole="T_Emploee" />
+        </EntityType>
+        <EntityType Name="T_Employee_Experiance">
+          <Key>
+            <PropertyRef Name="Emp_Exp_Id" />
+          </Key>
+          <Property Name="Emp_Exp_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Exp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Exp_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Exp_Date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_Exp_Length" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Exp_Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Exp_Major" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Exp_State" Type="Boolean" />
+          <Property Name="Emp_Exp_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Employee_Experiance_T_Emploee" FromRole="T_Employee_Experiance" ToRole="T_Emploee" />
+        </EntityType>
+        <EntityType Name="T_Employee_File">
+          <Key>
+            <PropertyRef Name="Emp_F_Id" />
+          </Key>
+          <Property Name="Emp_F_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_F_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_F_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_F_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_F_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_F_State" Type="Boolean" />
+          <Property Name="Emp_F_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Employee_File_T_Emploee" FromRole="T_Employee_File" ToRole="T_Emploee" />
+        </EntityType>
+        <EntityType Name="T_Employee_Map">
+          <Key>
+            <PropertyRef Name="Emp_Mp_Id" />
+          </Key>
+          <Property Name="Emp_Mp_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Mp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Mp_Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Mp_Level" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Mp_Bonas" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Blus" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Year" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Single_Bons" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mp_Marrid_Bons" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Company_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Companey" Relationship="Self.FK_T_Employee_Map_T_Companey" FromRole="T_Employee_Map" ToRole="T_Companey" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Emploee_T_Employee_Map" FromRole="T_Employee_Map" ToRole="T_Emploee" />
+          <NavigationProperty Name="T_Salary_Master" Relationship="Self.FK_T_Emploeey_Salary_Master_T_Employee_Map" FromRole="T_Employee_Map" ToRole="T_Salary_Master" />
+        </EntityType>
+        <EntityType Name="T_Employee_Retriment">
+          <Key>
+            <PropertyRef Name="Emp_Re_Id" />
+          </Key>
+          <Property Name="Emp_Re_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Re_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Re_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Re_Date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_Re_Resone" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Re_Salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Re_State" Type="Boolean" />
+          <Property Name="Emp_Re_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Employee_Retriment_T_Emploee" FromRole="T_Employee_Retriment" ToRole="T_Emploee" />
+        </EntityType>
+        <EntityType Name="T_Employee_Social">
+          <Key>
+            <PropertyRef Name="Emp_Ss_ID" />
+          </Key>
+          <Property Name="Emp_Ss_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Ss_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Ss_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Ss_Date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_Ss_End_date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_Ss_Percentage" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Ss_Emp" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Ss_Company" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Ss_State" Type="Boolean" />
+          <Property Name="Emp_Ss_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Employee_Social_T_Emploee" FromRole="T_Employee_Social" ToRole="T_Emploee" />
+        </EntityType>
+        <EntityType Name="T_Employee_State">
+          <Key>
+            <PropertyRef Name="Emp_St_Id" />
+          </Key>
+          <Property Name="Emp_St_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_St_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_St_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_St_State" Type="Boolean" />
+          <Property Name="Emp_St_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Companey" Relationship="Self.FK_T_Employee_State_T_Companey" FromRole="T_Employee_State" ToRole="T_Companey" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Emploee_T_Employee_State" FromRole="T_Employee_State" ToRole="T_Emploee" />
+        </EntityType>
+        <EntityType Name="T_Salarey_Month">
+          <Key>
+            <PropertyRef Name="Emp_Mnth_Sal_Id" />
+          </Key>
+          <Property Name="Emp_Mnth_Sal_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Mnth_Sal_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Mnth_Sal_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Mnth_Sal_Date" Type="DateTime" Precision="0" />
+          <Property Name="Emp_Mnth_Sal_Salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_Bonas" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_Minose" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_SS_Minous" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Mnth_Sal_State" Type="Boolean" />
+          <Property Name="Emp_Mnth_Sal_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Emp_Sal_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Emploee" Relationship="Self.FK_T_Emploeey_Month_Salarey_T_Emploee" FromRole="T_Salarey_Month" ToRole="T_Emploee" />
+          <NavigationProperty Name="T_Salary_Master" Relationship="Self.FK_T_Emploeey_Month_Salarey_T_Emploeey_Salary_Master" FromRole="T_Salarey_Month" ToRole="T_Salary_Master" />
+        </EntityType>
+        <EntityType Name="T_Salary_Master">
+          <Key>
+            <PropertyRef Name="Emp_Sal_Id" />
+          </Key>
+          <Property Name="Emp_Sal_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Emp_Sal_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Sal_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Sal_Salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Emp_Sal_State" Type="Boolean" />
+          <Property Name="Emp_Sal_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Mp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Employee_Map" Relationship="Self.FK_T_Emploeey_Salary_Master_T_Employee_Map" FromRole="T_Salary_Master" ToRole="T_Employee_Map" />
+          <NavigationProperty Name="T_Salarey_Month" Relationship="Self.FK_T_Emploeey_Month_Salarey_T_Emploeey_Salary_Master" FromRole="T_Salary_Master" ToRole="T_Salarey_Month" />
+        </EntityType>
+        <EntityType Name="T_User_Type">
+          <Key>
+            <PropertyRef Name="User_T_Id" />
+          </Key>
+          <Property Name="User_T_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="User_T_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_T_Nane" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="User_T_State" Type="Boolean" />
+          <Property Name="User_T_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_Users" Relationship="SMART_HR_DB_2023Model.FK_T_Users_T_User_Type" FromRole="T_User_Type" ToRole="T_Users" />
+        </EntityType>
+        <EntityType Name="T_Users">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="User_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="User_Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="User_State" Type="Boolean" />
+          <Property Name="User_Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="User_T_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Comp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Companey" Relationship="Self.FK_T_Users_T_Companey" FromRole="T_Users" ToRole="T_Companey" />
+          <NavigationProperty Name="T_User_Type" Relationship="SMART_HR_DB_2023Model.FK_T_Users_T_User_Type" FromRole="T_Users" ToRole="T_User_Type" />
+        </EntityType>
+        <Association Name="FK_T_Attend_T_Attend_Day">
+          <End Role="T_Attend_Day" Type="Self.T_Attend_Day" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Attend" Type="Self.T_Attend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Attend_Day">
+              <PropertyRef Name="Emp_Att_D_Id" />
+            </Principal>
+            <Dependent Role="T_Attend">
+              <PropertyRef Name="Emp_Att_D_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Attend_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Attend" Type="Self.T_Attend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Attend">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploeey_Attend_Day_T_Emploeey_Attend_Month">
+          <End Role="T_Attend_Month" Type="Self.T_Attend_Month" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Attend_Day" Type="Self.T_Attend_Day" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Attend_Month">
+              <PropertyRef Name="Emp_Att_M_Id" />
+            </Principal>
+            <Dependent Role="T_Attend_Day">
+              <PropertyRef Name="Emp_Att_M_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Customer_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Customer" Type="Self.T_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Customer">
+              <PropertyRef Name="Company_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploee_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Emploee">
+              <PropertyRef Name="Company_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Map_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Employee_Map" Type="Self.T_Employee_Map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Map">
+              <PropertyRef Name="Company_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_State_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Employee_State" Type="Self.T_Employee_State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_State">
+              <PropertyRef Name="Company_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Users_T_Companey">
+          <End Role="T_Companey" Type="Self.T_Companey" Multiplicity="0..1" />
+          <End Role="T_Users" Type="Self.T_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Companey">
+              <PropertyRef Name="Company_Id" />
+            </Principal>
+            <Dependent Role="T_Users">
+              <PropertyRef Name="Comp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Contract_T_Customer">
+          <End Role="T_Customer" Type="Self.T_Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Customer_Contract" Type="Self.T_Customer_Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer">
+              <PropertyRef Name="Cust_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Contract">
+              <PropertyRef Name="Cust_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Customer_Companey_T_Customer">
+          <End Role="T_Customer" Type="Self.T_Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Customer_Companey" Type="Self.T_Customer_Companey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer">
+              <PropertyRef Name="Cust_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Companey">
+              <PropertyRef Name="Cust_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Invoice_T_Customer">
+          <End Role="T_Customer" Type="Self.T_Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Customer_Invoice" Type="Self.T_Customer_Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer">
+              <PropertyRef Name="Cust_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Invoice">
+              <PropertyRef Name="Cust_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Customer_Bill_T_Customer_Invoice">
+          <End Role="T_Customer_Invoice" Type="Self.T_Customer_Invoice" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Customer_Bill" Type="Self.T_Customer_Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer_Invoice">
+              <PropertyRef Name="Inv_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Bill">
+              <PropertyRef Name="Inv_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Contract_T_Customer_Companey">
+          <End Role="T_Customer_Companey" Type="Self.T_Customer_Companey" Multiplicity="0..1" />
+          <End Role="T_Customer_Contract" Type="Self.T_Customer_Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer_Companey">
+              <PropertyRef Name="Cust_Com_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Contract">
+              <PropertyRef Name="Cust_Com_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Invoice_T_Customer_Contract">
+          <End Role="T_Customer_Contract" Type="Self.T_Customer_Contract" Multiplicity="0..1" />
+          <End Role="T_Customer_Invoice" Type="Self.T_Customer_Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer_Contract">
+              <PropertyRef Name="Con_Id" />
+            </Principal>
+            <Dependent Role="T_Customer_Invoice">
+              <PropertyRef Name="Con_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploee_T_Employee_Map">
+          <End Role="T_Employee_Map" Type="Self.T_Employee_Map" Multiplicity="0..1" />
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Employee_Map">
+              <PropertyRef Name="Emp_Mp_Id" />
+            </Principal>
+            <Dependent Role="T_Emploee">
+              <PropertyRef Name="Emp_Mp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploee_T_Employee_State">
+          <End Role="T_Employee_State" Type="Self.T_Employee_State" Multiplicity="0..1" />
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Employee_State">
+              <PropertyRef Name="Emp_St_Id" />
+            </Principal>
+            <Dependent Role="T_Emploee">
+              <PropertyRef Name="Emp_St_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploeey_Month_Salarey_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Salarey_Month" Type="Self.T_Salarey_Month" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Salarey_Month">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Certificate_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_Certificate" Type="Self.T_Employee_Certificate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Certificate">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Experiance_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_Experiance" Type="Self.T_Employee_Experiance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Experiance">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_File_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_File" Type="Self.T_Employee_File" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_File">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Retriment_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_Retriment" Type="Self.T_Employee_Retriment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Retriment">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Employee_Social_T_Emploee">
+          <End Role="T_Emploee" Type="Self.T_Emploee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Employee_Social" Type="Self.T_Employee_Social" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Emploee">
+              <PropertyRef Name="Emp_Id" />
+            </Principal>
+            <Dependent Role="T_Employee_Social">
+              <PropertyRef Name="Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploeey_Salary_Master_T_Employee_Map">
+          <End Role="T_Employee_Map" Type="Self.T_Employee_Map" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Salary_Master" Type="Self.T_Salary_Master" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Employee_Map">
+              <PropertyRef Name="Emp_Mp_Id" />
+            </Principal>
+            <Dependent Role="T_Salary_Master">
+              <PropertyRef Name="Emp_Mp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Emploeey_Month_Salarey_T_Emploeey_Salary_Master">
+          <End Role="T_Salary_Master" Type="Self.T_Salary_Master" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="T_Salarey_Month" Type="Self.T_Salarey_Month" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Salary_Master">
+              <PropertyRef Name="Emp_Sal_Id" />
+            </Principal>
+            <Dependent Role="T_Salarey_Month">
+              <PropertyRef Name="Emp_Sal_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SMART_HR_DB_2023Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_Attend" EntityType="Self.T_Attend" />
+          <EntitySet Name="T_Attend_Day" EntityType="Self.T_Attend_Day" />
+          <EntitySet Name="T_Attend_Month" EntityType="Self.T_Attend_Month" />
+          <EntitySet Name="T_Companey" EntityType="Self.T_Companey" />
+          <EntitySet Name="T_Customer" EntityType="Self.T_Customer" />
+          <EntitySet Name="T_Customer_Bill" EntityType="Self.T_Customer_Bill" />
+          <EntitySet Name="T_Customer_Companey" EntityType="Self.T_Customer_Companey" />
+          <EntitySet Name="T_Customer_Contract" EntityType="Self.T_Customer_Contract" />
+          <EntitySet Name="T_Customer_Invoice" EntityType="Self.T_Customer_Invoice" />
+          <EntitySet Name="T_Emploee" EntityType="Self.T_Emploee" />
+          <EntitySet Name="T_Employee_Certificate" EntityType="Self.T_Employee_Certificate" />
+          <EntitySet Name="T_Employee_Experiance" EntityType="Self.T_Employee_Experiance" />
+          <EntitySet Name="T_Employee_File" EntityType="Self.T_Employee_File" />
+          <EntitySet Name="T_Employee_Map" EntityType="Self.T_Employee_Map" />
+          <EntitySet Name="T_Employee_Retriment" EntityType="Self.T_Employee_Retriment" />
+          <EntitySet Name="T_Employee_Social" EntityType="Self.T_Employee_Social" />
+          <EntitySet Name="T_Employee_State" EntityType="Self.T_Employee_State" />
+          <EntitySet Name="T_Salarey_Month" EntityType="Self.T_Salarey_Month" />
+          <EntitySet Name="T_Salary_Master" EntityType="Self.T_Salary_Master" />
+          <EntitySet Name="T_User_Type" EntityType="Self.T_User_Type" />
+          <EntitySet Name="T_Users" EntityType="Self.T_Users" />
+          <AssociationSet Name="FK_T_Attend_T_Attend_Day" Association="Self.FK_T_Attend_T_Attend_Day">
+            <End Role="T_Attend_Day" EntitySet="T_Attend_Day" />
+            <End Role="T_Attend" EntitySet="T_Attend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Attend_T_Emploee" Association="Self.FK_T_Attend_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Attend" EntitySet="T_Attend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploeey_Attend_Day_T_Emploeey_Attend_Month" Association="Self.FK_T_Emploeey_Attend_Day_T_Emploeey_Attend_Month">
+            <End Role="T_Attend_Month" EntitySet="T_Attend_Month" />
+            <End Role="T_Attend_Day" EntitySet="T_Attend_Day" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Customer_T_Companey" Association="Self.FK_T_Customer_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Customer" EntitySet="T_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploee_T_Companey" Association="Self.FK_T_Emploee_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Map_T_Companey" Association="Self.FK_T_Employee_Map_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Employee_Map" EntitySet="T_Employee_Map" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_State_T_Companey" Association="Self.FK_T_Employee_State_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Employee_State" EntitySet="T_Employee_State" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Users_T_Companey" Association="Self.FK_T_Users_T_Companey">
+            <End Role="T_Companey" EntitySet="T_Companey" />
+            <End Role="T_Users" EntitySet="T_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Contract_T_Customer" Association="Self.FK_T_Contract_T_Customer">
+            <End Role="T_Customer" EntitySet="T_Customer" />
+            <End Role="T_Customer_Contract" EntitySet="T_Customer_Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Customer_Companey_T_Customer" Association="Self.FK_T_Customer_Companey_T_Customer">
+            <End Role="T_Customer" EntitySet="T_Customer" />
+            <End Role="T_Customer_Companey" EntitySet="T_Customer_Companey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Invoice_T_Customer" Association="Self.FK_T_Invoice_T_Customer">
+            <End Role="T_Customer" EntitySet="T_Customer" />
+            <End Role="T_Customer_Invoice" EntitySet="T_Customer_Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Customer_Bill_T_Customer_Invoice" Association="Self.FK_T_Customer_Bill_T_Customer_Invoice">
+            <End Role="T_Customer_Invoice" EntitySet="T_Customer_Invoice" />
+            <End Role="T_Customer_Bill" EntitySet="T_Customer_Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Contract_T_Customer_Companey" Association="Self.FK_T_Contract_T_Customer_Companey">
+            <End Role="T_Customer_Companey" EntitySet="T_Customer_Companey" />
+            <End Role="T_Customer_Contract" EntitySet="T_Customer_Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Invoice_T_Customer_Contract" Association="Self.FK_T_Invoice_T_Customer_Contract">
+            <End Role="T_Customer_Contract" EntitySet="T_Customer_Contract" />
+            <End Role="T_Customer_Invoice" EntitySet="T_Customer_Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploee_T_Employee_Map" Association="Self.FK_T_Emploee_T_Employee_Map">
+            <End Role="T_Employee_Map" EntitySet="T_Employee_Map" />
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploee_T_Employee_State" Association="Self.FK_T_Emploee_T_Employee_State">
+            <End Role="T_Employee_State" EntitySet="T_Employee_State" />
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploeey_Month_Salarey_T_Emploee" Association="Self.FK_T_Emploeey_Month_Salarey_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Salarey_Month" EntitySet="T_Salarey_Month" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Certificate_T_Emploee" Association="Self.FK_T_Employee_Certificate_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_Certificate" EntitySet="T_Employee_Certificate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Experiance_T_Emploee" Association="Self.FK_T_Employee_Experiance_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_Experiance" EntitySet="T_Employee_Experiance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_File_T_Emploee" Association="Self.FK_T_Employee_File_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_File" EntitySet="T_Employee_File" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Retriment_T_Emploee" Association="Self.FK_T_Employee_Retriment_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_Retriment" EntitySet="T_Employee_Retriment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Employee_Social_T_Emploee" Association="Self.FK_T_Employee_Social_T_Emploee">
+            <End Role="T_Emploee" EntitySet="T_Emploee" />
+            <End Role="T_Employee_Social" EntitySet="T_Employee_Social" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploeey_Salary_Master_T_Employee_Map" Association="Self.FK_T_Emploeey_Salary_Master_T_Employee_Map">
+            <End Role="T_Employee_Map" EntitySet="T_Employee_Map" />
+            <End Role="T_Salary_Master" EntitySet="T_Salary_Master" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Emploeey_Month_Salarey_T_Emploeey_Salary_Master" Association="Self.FK_T_Emploeey_Month_Salarey_T_Emploeey_Salary_Master">
+            <End Role="T_Salary_Master" EntitySet="T_Salary_Master" />
+            <End Role="T_Salarey_Month" EntitySet="T_Salarey_Month" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Users_T_User_Type" Association="SMART_HR_DB_2023Model.FK_T_Users_T_User_Type">
+            <End Role="T_User_Type" EntitySet="T_User_Type" />
+            <End Role="T_Users" EntitySet="T_Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_T_Users_T_User_Type">
+          <End Type="SMART_HR_DB_2023Model.T_User_Type" Role="T_User_Type" Multiplicity="0..1" />
+          <End Type="SMART_HR_DB_2023Model.T_Users" Role="T_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_User_Type">
+              <PropertyRef Name="User_T_Id" />
+            </Principal>
+            <Dependent Role="T_Users">
+              <PropertyRef Name="User_T_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SMART_HR_DB_2023ModelStoreContainer" CdmEntityContainer="SMART_HR_DB_2023Entities">
+          <EntitySetMapping Name="T_Attend">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Attend">
+              <MappingFragment StoreEntitySet="T_Attend">
+                <ScalarProperty Name="Emp_Att_Id" ColumnName="Emp_Att_Id" />
+                <ScalarProperty Name="Emp_Att_Code" ColumnName="Emp_Att_Code" />
+                <ScalarProperty Name="Emp_Att_Date" ColumnName="Emp_Att_Date" />
+                <ScalarProperty Name="Emp_Att_Houer" ColumnName="Emp_Att_Houer" />
+                <ScalarProperty Name="Emp_Att_State" ColumnName="Emp_Att_State" />
+                <ScalarProperty Name="Emp_Att_Note" ColumnName="Emp_Att_Note" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="Emp_Att_D_Id" ColumnName="Emp_Att_D_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Attend_Day">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Attend_Day">
+              <MappingFragment StoreEntitySet="T_Attend_Day">
+                <ScalarProperty Name="Emp_Att_D_Id" ColumnName="Emp_Att_D_Id" />
+                <ScalarProperty Name="Emp_Att_D_Code" ColumnName="Emp_Att_D_Code" />
+                <ScalarProperty Name="Emp_Att_D_Date" ColumnName="Emp_Att_D_Date" />
+                <ScalarProperty Name="Emp_Att_D_Day" ColumnName="Emp_Att_D_Day" />
+                <ScalarProperty Name="Emp_Att_D_State" ColumnName="Emp_Att_D_State" />
+                <ScalarProperty Name="Emp_Att_D_Note" ColumnName="Emp_Att_D_Note" />
+                <ScalarProperty Name="Emp_Att_M_Id" ColumnName="Emp_Att_M_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Attend_Month">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Attend_Month">
+              <MappingFragment StoreEntitySet="T_Attend_Month">
+                <ScalarProperty Name="Emp_Att_M_Id" ColumnName="Emp_Att_M_Id" />
+                <ScalarProperty Name="Emp_Att_M_Code" ColumnName="Emp_Att_M_Code" />
+                <ScalarProperty Name="Emp_Att_M_Date" ColumnName="Emp_Att_M_Date" />
+                <ScalarProperty Name="Emp_Att_M_Month_Num" ColumnName="Emp_Att_M_Month_Num" />
+                <ScalarProperty Name="Emp_Att_M_Month_Name" ColumnName="Emp_Att_M_Month_Name" />
+                <ScalarProperty Name="Emp_Att_M_Day_Count" ColumnName="Emp_Att_M_Day_Count" />
+                <ScalarProperty Name="Emp_Att_M_State" ColumnName="Emp_Att_M_State" />
+                <ScalarProperty Name="Emp_Att_M_Note" ColumnName="Emp_Att_M_Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Companey">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Companey">
+              <MappingFragment StoreEntitySet="T_Companey">
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="Company_Code" ColumnName="Company_Code" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+                <ScalarProperty Name="Company_Tital" ColumnName="Company_Tital" />
+                <ScalarProperty Name="Company_Address" ColumnName="Company_Address" />
+                <ScalarProperty Name="Company_Mobile" ColumnName="Company_Mobile" />
+                <ScalarProperty Name="Company_Phone" ColumnName="Company_Phone" />
+                <ScalarProperty Name="Company_Fax" ColumnName="Company_Fax" />
+                <ScalarProperty Name="Company_Email" ColumnName="Company_Email" />
+                <ScalarProperty Name="Company_State" ColumnName="Company_State" />
+                <ScalarProperty Name="Company_Note" ColumnName="Company_Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Customer">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer">
+              <MappingFragment StoreEntitySet="T_Customer">
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+                <ScalarProperty Name="Cust_Code" ColumnName="Cust_Code" />
+                <ScalarProperty Name="Cust_Name" ColumnName="Cust_Name" />
+                <ScalarProperty Name="Cust_Mobile" ColumnName="Cust_Mobile" />
+                <ScalarProperty Name="Cust_Phone" ColumnName="Cust_Phone" />
+                <ScalarProperty Name="Cust_Fax" ColumnName="Cust_Fax" />
+                <ScalarProperty Name="Cust_Email" ColumnName="Cust_Email" />
+                <ScalarProperty Name="Cust_Address" ColumnName="Cust_Address" />
+                <ScalarProperty Name="Cust_State" ColumnName="Cust_State" />
+                <ScalarProperty Name="Cust_Note" ColumnName="Cust_Note" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Customer_Bill">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer_Bill">
+              <MappingFragment StoreEntitySet="T_Customer_Bill">
+                <ScalarProperty Name="bill_Id" ColumnName="bill_Id" />
+                <ScalarProperty Name="bill_Code" ColumnName="bill_Code" />
+                <ScalarProperty Name="bill_Text" ColumnName="bill_Text" />
+                <ScalarProperty Name="bill_Date" ColumnName="bill_Date" />
+                <ScalarProperty Name="bill_Time" ColumnName="bill_Time" />
+                <ScalarProperty Name="bill_Price" ColumnName="bill_Price" />
+                <ScalarProperty Name="bill_State" ColumnName="bill_State" />
+                <ScalarProperty Name="bill_Note" ColumnName="bill_Note" />
+                <ScalarProperty Name="Inv_Id" ColumnName="Inv_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Customer_Companey">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer_Companey">
+              <MappingFragment StoreEntitySet="T_Customer_Companey">
+                <ScalarProperty Name="Cust_Com_Id" ColumnName="Cust_Com_Id" />
+                <ScalarProperty Name="Cust_Com_Code" ColumnName="Cust_Com_Code" />
+                <ScalarProperty Name="Cust_Com_place" ColumnName="Cust_Com_place" />
+                <ScalarProperty Name="Cust_Com_Name" ColumnName="Cust_Com_Name" />
+                <ScalarProperty Name="Cust_Com_Time" ColumnName="Cust_Com_Time" />
+                <ScalarProperty Name="Cust_Com_Major" ColumnName="Cust_Com_Major" />
+                <ScalarProperty Name="Cust_Com_State" ColumnName="Cust_Com_State" />
+                <ScalarProperty Name="Cust_Com_Note" ColumnName="Cust_Com_Note" />
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Customer_Contract">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer_Contract">
+              <MappingFragment StoreEntitySet="T_Customer_Contract">
+                <ScalarProperty Name="Con_Id" ColumnName="Con_Id" />
+                <ScalarProperty Name="Con_Code" ColumnName="Con_Code" />
+                <ScalarProperty Name="Con_Name" ColumnName="Con_Name" />
+                <ScalarProperty Name="Con_Date" ColumnName="Con_Date" />
+                <ScalarProperty Name="Con_S_Date" ColumnName="Con_S_Date" />
+                <ScalarProperty Name="Con_E_Date" ColumnName="Con_E_Date" />
+                <ScalarProperty Name="Con_" ColumnName="Con_" />
+                <ScalarProperty Name="Con_Emp_Num" ColumnName="Con_Emp_Num" />
+                <ScalarProperty Name="Con_emp_Value" ColumnName="Con_emp_Value" />
+                <ScalarProperty Name="Con_State" ColumnName="Con_State" />
+                <ScalarProperty Name="Con_Note" ColumnName="Con_Note" />
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+                <ScalarProperty Name="Cust_Com_Id" ColumnName="Cust_Com_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Customer_Invoice">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Customer_Invoice">
+              <MappingFragment StoreEntitySet="T_Customer_Invoice">
+                <ScalarProperty Name="Inv_Id" ColumnName="Inv_Id" />
+                <ScalarProperty Name="Inv_Code" ColumnName="Inv_Code" />
+                <ScalarProperty Name="Inv_Date" ColumnName="Inv_Date" />
+                <ScalarProperty Name="Inv_Time" ColumnName="Inv_Time" />
+                <ScalarProperty Name="Inv_Price" ColumnName="Inv_Price" />
+                <ScalarProperty Name="Inv_Discount" ColumnName="Inv_Discount" />
+                <ScalarProperty Name="Inv_Total" ColumnName="Inv_Total" />
+                <ScalarProperty Name="Inv_State" ColumnName="Inv_State" />
+                <ScalarProperty Name="Inv_Note" ColumnName="Inv_Note" />
+                <ScalarProperty Name="Con_Id" ColumnName="Con_Id" />
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Emploee">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Emploee">
+              <MappingFragment StoreEntitySet="T_Emploee">
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+                <ScalarProperty Name="Emp_F_Name" ColumnName="Emp_F_Name" />
+                <ScalarProperty Name="Emp_L_Name" ColumnName="Emp_L_Name" />
+                <ScalarProperty Name="Emp_Nation_num" ColumnName="Emp_Nation_num" />
+                <ScalarProperty Name="Emp_B_Date" ColumnName="Emp_B_Date" />
+                <ScalarProperty Name="Emp_Age" ColumnName="Emp_Age" />
+                <ScalarProperty Name="Emp_Gender" ColumnName="Emp_Gender" />
+                <ScalarProperty Name="Emp_Address" ColumnName="Emp_Address" />
+                <ScalarProperty Name="Emp_Phone" ColumnName="Emp_Phone" />
+                <ScalarProperty Name="Emp_Mobile" ColumnName="Emp_Mobile" />
+                <ScalarProperty Name="Emp_Maritial" ColumnName="Emp_Maritial" />
+                <ScalarProperty Name="Emp_State" ColumnName="Emp_State" />
+                <ScalarProperty Name="Emp_Note" ColumnName="Emp_Note" />
+                <ScalarProperty Name="Emp_St_Id" ColumnName="Emp_St_Id" />
+                <ScalarProperty Name="Emp_Mp_Id" ColumnName="Emp_Mp_Id" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Employee_Certificate">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Certificate">
+              <MappingFragment StoreEntitySet="T_Employee_Certificate">
+                <ScalarProperty Name="Emp_C_Id" ColumnName="Emp_C_Id" />
+                <ScalarProperty Name="Emp_C_Code" ColumnName="Emp_C_Code" />
+                <ScalarProperty Name="Emp_C_Name" ColumnName="Emp_C_Name" />
+                <ScalarProperty Name="Emp_C_Adress" ColumnName="Emp_C_Adress" />
+                <ScalarProperty Name="Emp_C_Date" ColumnName="Emp_C_Date" />
+                <ScalarProperty Name="Emp_C_State" ColumnName="Emp_C_State" />
+                <ScalarProperty Name="Emp_C_Note" ColumnName="Emp_C_Note" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Employee_Experiance">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Experiance">
+              <MappingFragment StoreEntitySet="T_Employee_Experiance">
+                <ScalarProperty Name="Emp_Exp_Id" ColumnName="Emp_Exp_Id" />
+                <ScalarProperty Name="Emp_Exp_Code" ColumnName="Emp_Exp_Code" />
+                <ScalarProperty Name="Emp_Exp_Name" ColumnName="Emp_Exp_Name" />
+                <ScalarProperty Name="Emp_Exp_Date" ColumnName="Emp_Exp_Date" />
+                <ScalarProperty Name="Emp_Exp_Length" ColumnName="Emp_Exp_Length" />
+                <ScalarProperty Name="Emp_Exp_Adress" ColumnName="Emp_Exp_Adress" />
+                <ScalarProperty Name="Emp_Exp_Major" ColumnName="Emp_Exp_Major" />
+                <ScalarProperty Name="Emp_Exp_State" ColumnName="Emp_Exp_State" />
+                <ScalarProperty Name="Emp_Exp_note" ColumnName="Emp_Exp_note" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Employee_File">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_File">
+              <MappingFragment StoreEntitySet="T_Employee_File">
+                <ScalarProperty Name="Emp_F_Id" ColumnName="Emp_F_Id" />
+                <ScalarProperty Name="Emp_F_Code" ColumnName="Emp_F_Code" />
+                <ScalarProperty Name="Emp_F_Name" ColumnName="Emp_F_Name" />
+                <ScalarProperty Name="Emp_F_Type" ColumnName="Emp_F_Type" />
+                <ScalarProperty Name="Emp_F_Path" ColumnName="Emp_F_Path" />
+                <ScalarProperty Name="Emp_F_State" ColumnName="Emp_F_State" />
+                <ScalarProperty Name="Emp_F_Note" ColumnName="Emp_F_Note" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Employee_Map">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Map">
+              <MappingFragment StoreEntitySet="T_Employee_Map">
+                <ScalarProperty Name="Emp_Mp_Id" ColumnName="Emp_Mp_Id" />
+                <ScalarProperty Name="Emp_Mp_Code" ColumnName="Emp_Mp_Code" />
+                <ScalarProperty Name="Emp_Mp_Class" ColumnName="Emp_Mp_Class" />
+                <ScalarProperty Name="Emp_Mp_Level" ColumnName="Emp_Mp_Level" />
+                <ScalarProperty Name="Emp_Mp_Bonas" ColumnName="Emp_Mp_Bonas" />
+                <ScalarProperty Name="Emp_Mp_Blus" ColumnName="Emp_Mp_Blus" />
+                <ScalarProperty Name="Emp_Mp_Year" ColumnName="Emp_Mp_Year" />
+                <ScalarProperty Name="Emp_Mp_Salary" ColumnName="Emp_Mp_Salary" />
+                <ScalarProperty Name="Emp_Mp_Single_Bons" ColumnName="Emp_Mp_Single_Bons" />
+                <ScalarProperty Name="Emp_Mp_Marrid_Bons" ColumnName="Emp_Mp_Marrid_Bons" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Employee_Retriment">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Retriment">
+              <MappingFragment StoreEntitySet="T_Employee_Retriment">
+                <ScalarProperty Name="Emp_Re_Id" ColumnName="Emp_Re_Id" />
+                <ScalarProperty Name="Emp_Re_Code" ColumnName="Emp_Re_Code" />
+                <ScalarProperty Name="Emp_Re_Name" ColumnName="Emp_Re_Name" />
+                <ScalarProperty Name="Emp_Re_Date" ColumnName="Emp_Re_Date" />
+                <ScalarProperty Name="Emp_Re_Resone" ColumnName="Emp_Re_Resone" />
+                <ScalarProperty Name="Emp_Re_Salary" ColumnName="Emp_Re_Salary" />
+                <ScalarProperty Name="Emp_Re_State" ColumnName="Emp_Re_State" />
+                <ScalarProperty Name="Emp_Re_Note" ColumnName="Emp_Re_Note" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Employee_Social">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_Social">
+              <MappingFragment StoreEntitySet="T_Employee_Social">
+                <ScalarProperty Name="Emp_Ss_ID" ColumnName="Emp_Ss_ID" />
+                <ScalarProperty Name="Emp_Ss_Code" ColumnName="Emp_Ss_Code" />
+                <ScalarProperty Name="Emp_Ss_Number" ColumnName="Emp_Ss_Number" />
+                <ScalarProperty Name="Emp_Ss_Date" ColumnName="Emp_Ss_Date" />
+                <ScalarProperty Name="Emp_Ss_End_date" ColumnName="Emp_Ss_End_date" />
+                <ScalarProperty Name="Emp_Ss_Percentage" ColumnName="Emp_Ss_Percentage" />
+                <ScalarProperty Name="Emp_Ss_Emp" ColumnName="Emp_Ss_Emp" />
+                <ScalarProperty Name="Emp_Ss_Company" ColumnName="Emp_Ss_Company" />
+                <ScalarProperty Name="Emp_Ss_State" ColumnName="Emp_Ss_State" />
+                <ScalarProperty Name="Emp_Ss_Note" ColumnName="Emp_Ss_Note" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Employee_State">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Employee_State">
+              <MappingFragment StoreEntitySet="T_Employee_State">
+                <ScalarProperty Name="Emp_St_Id" ColumnName="Emp_St_Id" />
+                <ScalarProperty Name="Emp_St_Code" ColumnName="Emp_St_Code" />
+                <ScalarProperty Name="Emp_St_Name" ColumnName="Emp_St_Name" />
+                <ScalarProperty Name="Emp_St_State" ColumnName="Emp_St_State" />
+                <ScalarProperty Name="Emp_St_Note" ColumnName="Emp_St_Note" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Salarey_Month">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Salarey_Month">
+              <MappingFragment StoreEntitySet="T_Salarey_Month">
+                <ScalarProperty Name="Emp_Mnth_Sal_Id" ColumnName="Emp_Mnth_Sal_Id" />
+                <ScalarProperty Name="Emp_Mnth_Sal_Code" ColumnName="Emp_Mnth_Sal_Code" />
+                <ScalarProperty Name="Emp_Mnth_Sal_Name" ColumnName="Emp_Mnth_Sal_Name" />
+                <ScalarProperty Name="Emp_Mnth_Sal_Date" ColumnName="Emp_Mnth_Sal_Date" />
+                <ScalarProperty Name="Emp_Mnth_Sal_Salary" ColumnName="Emp_Mnth_Sal_Salary" />
+                <ScalarProperty Name="Emp_Mnth_Sal_Bonas" ColumnName="Emp_Mnth_Sal_Bonas" />
+                <ScalarProperty Name="Emp_Mnth_Sal_Minose" ColumnName="Emp_Mnth_Sal_Minose" />
+                <ScalarProperty Name="Emp_Mnth_Sal_SS_Minous" ColumnName="Emp_Mnth_Sal_SS_Minous" />
+                <ScalarProperty Name="Emp_Mnth_Sal_Total" ColumnName="Emp_Mnth_Sal_Total" />
+                <ScalarProperty Name="Emp_Mnth_Sal_State" ColumnName="Emp_Mnth_Sal_State" />
+                <ScalarProperty Name="Emp_Mnth_Sal_Note" ColumnName="Emp_Mnth_Sal_Note" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="Emp_Sal_Id" ColumnName="Emp_Sal_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Salary_Master">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Salary_Master">
+              <MappingFragment StoreEntitySet="T_Salary_Master">
+                <ScalarProperty Name="Emp_Sal_Id" ColumnName="Emp_Sal_Id" />
+                <ScalarProperty Name="Emp_Sal_Code" ColumnName="Emp_Sal_Code" />
+                <ScalarProperty Name="Emp_Sal_Name" ColumnName="Emp_Sal_Name" />
+                <ScalarProperty Name="Emp_Sal_Salary" ColumnName="Emp_Sal_Salary" />
+                <ScalarProperty Name="Emp_Sal_State" ColumnName="Emp_Sal_State" />
+                <ScalarProperty Name="Emp_Sal_Note" ColumnName="Emp_Sal_Note" />
+                <ScalarProperty Name="Emp_Mp_Id" ColumnName="Emp_Mp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_User_Type">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_User_Type">
+              <MappingFragment StoreEntitySet="T_User_Type">
+                <ScalarProperty Name="User_T_Id" ColumnName="User_T_Id" />
+                <ScalarProperty Name="User_T_Code" ColumnName="User_T_Code" />
+                <ScalarProperty Name="User_T_Nane" ColumnName="User_T_Nane" />
+                <ScalarProperty Name="User_T_State" ColumnName="User_T_State" />
+                <ScalarProperty Name="User_T_Note" ColumnName="User_T_Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Users">
+            <EntityTypeMapping TypeName="SMART_HR_DB_2023Model.T_Users">
+              <MappingFragment StoreEntitySet="T_Users">
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="User_Code" ColumnName="User_Code" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+                <ScalarProperty Name="User_State" ColumnName="User_State" />
+                <ScalarProperty Name="User_Note" ColumnName="User_Note" />
+                <ScalarProperty Name="User_T_Id" ColumnName="User_T_Id" />
+                <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

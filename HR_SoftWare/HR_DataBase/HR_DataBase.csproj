@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E839EE3-B907-4851-8DBD-6349AF4F9666}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HR_DataBase</RootNamespace>
+    <AssemblyName>HR_DataBase</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commender\ClsCommander.cs" />
+    <Compile Include="HR_EDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR_EDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR_EDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR_EDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR_EDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Commender\ICommander.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T_Attend.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Attend_Day.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Attend_Month.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Companey.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Customer.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Customer_Bill.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Customer_Companey.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Customer_Contract.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Customer_Invoice.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Emploee.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Employee_Certificate.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Employee_Experiance.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Employee_File.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Employee_Map.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Employee_Retriment.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Employee_Social.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Employee_State.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Salarey_Month.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Salary_Master.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Users.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_User_Type.cs">
+      <DependentUpon>HR_EDB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="HR_EDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HR_EDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="HR_EDB.edmx.diagram">
+      <DependentUpon>HR_EDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HR_EDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>HR_EDB.Context.cs</LastGenOutput>
+      <DependentUpon>HR_EDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="HR_EDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HR_EDB.edmx</DependentUpon>
+      <LastGenOutput>HR_EDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
